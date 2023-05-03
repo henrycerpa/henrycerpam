@@ -16,7 +16,7 @@ tiktok = 'assets/tiktok.png'
 
 def layout():
     return html.Div([
-        html.H3("Email & Contact Info", style={'textAlign': 'center'}, className='my-3'),
+        html.H2("Email & Contact Info", style={'textAlign': 'center'}, className='my-3'),
         html.Hr(style={'color': '#e27f04', }),
 
         dbc.Row([
@@ -40,7 +40,7 @@ def layout():
             ], width=2),
             dbc.Col([
 
-                dcc.Markdown('[Message me in Telegram](https://t.me/thedatabito)', link_target='_blank'),
+                dcc.Markdown('[Message me in Telegram](https://t.me/henrycerpa)', link_target='_blank'),
 
             ], width=3),
         ], justify='center'),
@@ -53,7 +53,7 @@ def layout():
             ], width=2),
             dbc.Col([
 
-                dcc.Markdown('[Go to my LinkedIn user](https://www.linkedin.com/in/thedatabito/)', link_target='_blank'),
+                dcc.Markdown('[Go to my LinkedIn user](https://www.linkedin.com/in/henrycerpa/)', link_target='_blank'),
 
             ], width=3),
         ], justify='center'),
@@ -66,7 +66,7 @@ def layout():
             ], width=2),
             dbc.Col([
 
-                dcc.Markdown('[Go to my GitHub repositories](https://github.com/thedatabito)', link_target='_blank'),
+                dcc.Markdown('[Go to my GitHub repositories](https://github.com/henrycerpa)', link_target='_blank'),
 
             ], width=3),
         ], justify='center'),
@@ -79,7 +79,7 @@ def layout():
             ], width=2),
             dbc.Col([
 
-                dcc.Markdown('[Go to my YouTube channel](https://www.youtube.com/@thedatabito)', link_target='_blank'),
+                dcc.Markdown('[Go to my YouTube channel](https://www.youtube.com/@datahenry)', link_target='_blank'),
 
             ], width=3),
         ], justify='center'),
@@ -92,7 +92,7 @@ def layout():
             ], width=2),
             dbc.Col([
 
-                dcc.Markdown('[Go to my Twitch channel](https://www.twitch.tv/thedatabito)', link_target='_blank'),
+                dcc.Markdown('[Go to my Twitch channel](https://www.twitch.tv/datahenry)', link_target='_blank'),
 
             ], width=3),
         ], justify='center'),
@@ -105,7 +105,7 @@ def layout():
             ], width=2),
             dbc.Col([
 
-                dcc.Markdown('[Go to my Tik Tok user](https://www.tiktok.com/@thedatabito)', link_target='_blank'),
+                dcc.Markdown('[Go to my Tik Tok user](https://www.tiktok.com/@datahenry)', link_target='_blank'),
 
             ], width=3),
         ], justify='center'),

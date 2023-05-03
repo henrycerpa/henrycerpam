@@ -16,7 +16,7 @@ def layout():
 
             dbc.Col(
                 [
-                    html.H3('Under Construction', style={'textAlign':'center'}),
+                    html.H3('Under Construction'),
                 ], xs=8, sm=8, md=10, lg=10, xl=10, xxl=10)
         ]
     )

@@ -13,7 +13,7 @@ header = dbc.NavbarSimple(
             for page in dash.page_registry.values()
             if not page["path"].startswith("/app")]
         )],
-    brand="HENRY ALBERT CERPA MARQUEZ (@TheDataBito)",
+    brand="HENRY ALBERT CERPA MARQUEZ",
     color="info",
     dark=True,
 )

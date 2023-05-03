@@ -34,7 +34,7 @@ layout = html.Div([
         dbc.Row(
         [
             dbc.Col(dcc.Markdown('----------------------------------------', style={'color':'#e27f04', 'textAlign': 'left'}), width=4),
-            dbc.Col(dcc.Markdown('### Experience', style={'color':'#e27f04', 'textAlign': 'center', 'white-space': 'pre'},
+            dbc.Col(dcc.Markdown('## Experience', style={'color':'#e27f04', 'textAlign': 'center', 'white-space': 'pre'},
                                  className='ms-3')),
             dbc.Col(dcc.Markdown('----------------------------------------', style={'color':'#e27f04', 'textAlign': 'right'}), width=4),
         ]),
@@ -42,7 +42,7 @@ layout = html.Div([
     dbc.Row(
         [   dbc.Col(html.Img(src=logo_one),
                     style={'position': 'relative', 'width': '10%', 'left': '0px', 'top': '0px'}, width=2),
-            dbc.Col(dcc.Markdown('#### Data Specialist \n'
+            dbc.Col(dcc.Markdown('## Data Specialist \n'
                              '##### Glare Data Services \n'
                              'Since Nov/21\n', style={'textAlign': 'right'}), width=2),
             dbc.Col(dcc.Markdown('Successfully spearheaded the migration of data visualization tools, resulting in a 81% reduction in client costs. \n'
@@ -60,7 +60,7 @@ layout = html.Div([
     dbc.Row(
         [   dbc.Col(html.Img(src=logo_two),
                     style={'position': 'relative', 'width': '10%', 'left': '0px', 'top': '0px'}, width=2),
-            dbc.Col(dcc.Markdown('#### Data Analyst \n'
+            dbc.Col(dcc.Markdown('## Data Analyst \n'
                                  '##### Monkum \n'
                                  'May/19 - Oct/21 \n', style={'textAlign': 'right'}), width=2),
             dbc.Col(dcc.Markdown('Improve operational efficiency by successfully automating data entry, cleanup, analysis, and visualization processes\n'
@@ -78,7 +78,7 @@ layout = html.Div([
     dbc.Row(
         [dbc.Col(html.Img(src=logo_two),
                  style={'position': 'relative', 'width': '10%', 'left': '0px', 'top': '0px'}, width=2),
-         dbc.Col(dcc.Markdown('#### Digital Forensic Auditor \n'
+         dbc.Col(dcc.Markdown('## Digital Forensic Auditor \n'
                               '##### Monkum \n'
                               'Mar/16 - Apr/19 \n', style={'textAlign': 'right'}), width=2),
          dbc.Col(dcc.Markdown('Recovery of $912 million COP from the analysis of transactional data. \n'
@@ -93,7 +93,7 @@ layout = html.Div([
     dbc.Row(
         [
             dbc.Col(dcc.Markdown('----------------------------------------', style={'color':'#e27f04', 'textAlign': 'left'}), width=4),
-            dbc.Col(dcc.Markdown('### Apprenticeship', style={'color':'#e27f04', 'textAlign': 'center', 'white-space': 'pre'},
+            dbc.Col(dcc.Markdown('## Apprenticeship', style={'color':'#e27f04', 'textAlign': 'center', 'white-space': 'pre'},
                                  className='ms-3')),
             dbc.Col(dcc.Markdown('----------------------------------------', style={'color':'#e27f04', 'textAlign': 'right'}), width=4),
         ]),
@@ -101,7 +101,7 @@ layout = html.Div([
     dbc.Row(
         [dbc.Col(html.Img(src=logo_three),
                  style={'position': 'relative', 'width': '10%', 'left': '0px', 'top': '0px'}, width=2),
-         dbc.Col(dcc.Markdown('#### Data Science Fellow \n'
+         dbc.Col(dcc.Markdown('## Data Science Fellow \n'
                               '##### ICA \n'
                               'Mar/22 - Jul/22 \n', style={'textAlign': 'right'}), width=2),
          dbc.Col(dcc.Markdown('In agreement with Correlation One, to provide a data analysis tool that generates a model of brucellosis disease \n'
@@ -118,7 +118,7 @@ layout = html.Div([
     dbc.Row(
         [
             dbc.Col(dcc.Markdown('----------------------------------------', style={'color':'#e27f04', 'textAlign': 'right'}), width=4),
-            dbc.Col(dcc.Markdown('### Certifications', style={'color':'#e27f04', 'textAlign': 'center', 'white-space': 'pre'},
+            dbc.Col(dcc.Markdown('## Certifications', style={'color':'#e27f04', 'textAlign': 'center', 'white-space': 'pre'},
                                  className='ms-3')),
             dbc.Col(dcc.Markdown('----------------------------------------', style={'color':'#e27f04', 'textAlign': 'right'}), width=4),
         ]),
@@ -174,7 +174,7 @@ layout = html.Div([
     dbc.Row(
         [
             dbc.Col(dcc.Markdown('----------------------------------------', style={'color':'#e27f04', 'textAlign': 'right'}), width=4),
-            dbc.Col(dcc.Markdown('### Skills', style={'color':'#e27f04', 'textAlign': 'center', 'white-space': 'pre'},
+            dbc.Col(dcc.Markdown('## Skills', style={'color':'#e27f04', 'textAlign': 'center', 'white-space': 'pre'},
                                  className='ms-3')),
             dbc.Col(dcc.Markdown('----------------------------------------', style={'color':'#e27f04', 'textAlign': 'right'}), width=4),
         ]),
@@ -207,7 +207,7 @@ layout = html.Div([
     dbc.Row(
         [
             dbc.Col(dcc.Markdown('----------------------------------------', style={'color':'#e27f04', 'textAlign': 'right'}), width=4),
-            dbc.Col(dcc.Markdown('### Education', style={'color':'#e27f04', 'textAlign': 'center', 'white-space': 'pre'},
+            dbc.Col(dcc.Markdown('## Education', style={'color':'#e27f04', 'textAlign': 'center', 'white-space': 'pre'},
                                  className='ms-3')),
             dbc.Col(dcc.Markdown('----------------------------------------', style={'color':'#e27f04', 'textAlign': 'right'}), width=4),
         ]),

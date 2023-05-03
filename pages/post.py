@@ -11,7 +11,7 @@ link_two = 'https://youtu.be/Eh04BJfshWY'
 
 def layout():
     return html.Div([
-    html.H3("Latest social media posts", style={'textAlign':'center'}, className='my-3'),
+    html.H2("Latest social media posts", style={'textAlign':'center'}, className='my-3'),
     html.Hr(style={'color':'#e27f04',}),
 
 

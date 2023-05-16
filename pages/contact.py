@@ -6,13 +6,11 @@ dash.register_page(__name__, order=3, name="Email & Contact")
 
 green_text = {'color':'green'}
 
-email = 'assets/email.png'
-telegram = 'assets/telegram.png'
-linkedin = 'assets/linkedin.png'
-github = 'assets/github.png'
-youtube = 'assets/youtube.png'
-twitch = 'assets/twitch.png'
-tiktok = 'assets/tiktok.png'
+email = 'https://raw.githubusercontent.com/henrycerpa/database/main/email.png'
+telegram = 'https://raw.githubusercontent.com/henrycerpa/database/main/telegram.png'
+linkedin = 'https://raw.githubusercontent.com/henrycerpa/database/main/linkedin.png'
+github = 'https://raw.githubusercontent.com/henrycerpa/database/main/github.png'
+youtube = 'https://raw.githubusercontent.com/henrycerpa/database/main/youtube.png'
 
 def layout():
     return html.Div([
@@ -83,36 +81,6 @@ def layout():
 
             ], width=3),
         ], justify='center'),
-
-        dbc.Row([
-            dbc.Col([
-                html.Img(src=twitch,
-                                style={'position': 'relative', 'width': '20%', 'left': '0px', 'top': '0px'}),
-
-            ], width=2),
-            dbc.Col([
-
-                dcc.Markdown('[Go to my Twitch channel](https://www.twitch.tv/datahenry)', link_target='_blank'),
-
-            ], width=3),
-        ], justify='center'),
-
-        dbc.Row([
-            dbc.Col([
-                html.Img(src=tiktok,
-                                style={'position': 'relative', 'width': '20%', 'left': '0px', 'top': '0px'}),
-
-            ], width=2),
-            dbc.Col([
-
-                dcc.Markdown('[Go to my Tik Tok user](https://www.tiktok.com/@datahenry)', link_target='_blank'),
-
-            ], width=3),
-        ], justify='center'),
-
-
-
-
 
 
 

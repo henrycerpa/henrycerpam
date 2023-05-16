@@ -4,11 +4,11 @@ import dash_bootstrap_components as dbc
 
 dash.register_page(__name__, path='/', order=0, name="Resume")
 
-image_path = 'assets/profile.png'
-logo_one = 'assets/glare.png'
-logo_two = 'assets/monkum.png'
-logo_three = 'assets/ica.png'
-
+image_path = 'https://raw.githubusercontent.com/henrycerpa/database/main/profile.png'
+logo_one = 'https://raw.githubusercontent.com/henrycerpa/database/main/glare.png'
+logo_two = 'https://raw.githubusercontent.com/henrycerpa/database/main/monkum.png'
+logo_three = 'https://raw.githubusercontent.com/henrycerpa/database/main/mercedes.png'
+logo_four = 'https://raw.githubusercontent.com/henrycerpa/database/main/zara.png'
 
 layout = html.Div([
 
@@ -42,10 +42,12 @@ layout = html.Div([
     dbc.Row(
         [   dbc.Col(html.Img(src=logo_one),
                     style={'position': 'relative', 'width': '10%', 'left': '0px', 'top': '0px'}, width=2),
-            dbc.Col(dcc.Markdown('## Data Specialist \n'
+            dbc.Col(dcc.Markdown('### Data Specialist \n'
                              '##### Glare Data Services \n'
                              'Since Nov/21\n', style={'textAlign': 'right'}), width=2),
-            dbc.Col(dcc.Markdown('Successfully spearheaded the migration of data visualization tools, resulting in a 81% reduction in client costs. \n'
+            dbc.Col(dcc.Markdown('Develops a data analysis tool for modeling brucellosis disease behavior and predictions,\n'
+                                'optimizing vaccine inventory to critical points. Also, successfully led a data visualization\n'
+                                'tool migration, resulting in an 81% reduction in client costs. \n'
                                  'TECHNOLOGIES: \n'
                                  '◾Programming Languages: Python\n'
                                  '◾Declarative Language: SQL\n'
@@ -60,11 +62,13 @@ layout = html.Div([
     dbc.Row(
         [   dbc.Col(html.Img(src=logo_two),
                     style={'position': 'relative', 'width': '10%', 'left': '0px', 'top': '0px'}, width=2),
-            dbc.Col(dcc.Markdown('## Data Analyst \n'
+            dbc.Col(dcc.Markdown('### Data Analyst \n'
                                  '##### Monkum \n'
                                  'May/19 - Oct/21 \n', style={'textAlign': 'right'}), width=2),
-            dbc.Col(dcc.Markdown('Improve operational efficiency by successfully automating data entry, cleanup, analysis, and visualization processes\n'
-                                 'with a Python migration. This resulted in a dramatic reduction of lead time from 17 to 1 day. \n'
+            dbc.Col(dcc.Markdown('Automated processes and distribution in a hard discount store, from warehouses to\n'
+                                'physical stores and the end customer. Achieved through cross-referencing and analyzing\n'
+                                'database files (Excel, CSV) using Python, resulting in a significant reduction \n'
+                                'of delivery time from days to hours\n'
                                  'TECHNOLOGIES: \n'
                                  '◾Programming Languages: Python\n'
                                  '◾Spreadsheet Applications: Excel, Google Sheets\n'
@@ -78,7 +82,7 @@ layout = html.Div([
     dbc.Row(
         [dbc.Col(html.Img(src=logo_two),
                  style={'position': 'relative', 'width': '10%', 'left': '0px', 'top': '0px'}, width=2),
-         dbc.Col(dcc.Markdown('## Digital Forensic Auditor \n'
+         dbc.Col(dcc.Markdown('### Digital Forensic Auditor \n'
                               '##### Monkum \n'
                               'Mar/16 - Apr/19 \n', style={'textAlign': 'right'}), width=2),
          dbc.Col(dcc.Markdown('Recovery of $912 million COP from the analysis of transactional data. \n'
@@ -86,32 +90,39 @@ layout = html.Div([
                               '◾Data Processing App: SAP \n'
                               '◾Spreadsheet Applications: Excel\n'
                               '◾Data visualization: Dashboard in Excel \n'
-                              '◾Models used: Monte Carlo simulation\n', style={'white-space': 'pre'},
+                              '◾Models used: Monte Carlo simulation\n'
+                              '---------------------------------------- \n', style={'white-space': 'pre'},
                               className='ms-3'), width=7)
          ]),
 
     dbc.Row(
-        [
-            dbc.Col(dcc.Markdown('----------------------------------------', style={'color':'#e27f04', 'textAlign': 'left'}), width=4),
-            dbc.Col(dcc.Markdown('## Apprenticeship', style={'color':'#e27f04', 'textAlign': 'center', 'white-space': 'pre'},
-                                 className='ms-3')),
-            dbc.Col(dcc.Markdown('----------------------------------------', style={'color':'#e27f04', 'textAlign': 'right'}), width=4),
-        ]),
-
-    dbc.Row(
         [dbc.Col(html.Img(src=logo_three),
                  style={'position': 'relative', 'width': '10%', 'left': '0px', 'top': '0px'}, width=2),
-         dbc.Col(dcc.Markdown('## Data Science Fellow \n'
-                              '##### ICA \n'
-                              'Mar/22 - Jul/22 \n', style={'textAlign': 'right'}), width=2),
-         dbc.Col(dcc.Markdown('In agreement with Correlation One, to provide a data analysis tool that generates a model of brucellosis disease \n'
-                              'behavior and predictions based on data taken between years 2017 and 2021. \n'
+         dbc.Col(dcc.Markdown('### Audit Coordinator \n'
+                              '##### Daimler Colombia \n'
+                              'Oct/14 - Dec/15 \n', style={'textAlign': 'right'}), width=2),
+         dbc.Col(dcc.Markdown('Reduced inventory shrinkage from 8% to 1.4% in the imported parts warehouse \n'
+                              'for Mercedes Benz vehicles through the implementation of controls and monitoring \n'
                               'TECHNOLOGIES: \n'
-                              '◾Programming Languages: Python \n'
+                              '◾Data Processing App: SAP \n'
                               '◾Spreadsheet Applications: Excel\n'
-                              '◾Libraries: Pandas, Numpy, GeoJson, Dash, Plotly, Scipy \n'
-                              '◾Data visualization: Dash - Plotly \n'
-                              '◾Models used: Spatial-Temporal Distribution\n', style={'white-space': 'pre'},
+                              '◾Data visualization: Dashboard in Excel \n'
+                              '---------------------------------------- \n', style={'white-space': 'pre'},
+                              className='ms-3'), width=7)
+         ]),
+
+    dbc.Row(
+        [dbc.Col(html.Img(src=logo_four),
+                 style={'position': 'relative', 'width': '10%', 'left': '0px', 'top': '0px'}, width=2),
+         dbc.Col(dcc.Markdown('### Auditor \n'
+                              '##### Texmoda \n'
+                              'Jun/11 - Nov/13 \n', style={'textAlign': 'right'}), width=2),
+         dbc.Col(dcc.Markdown('Reduced shrinkage from 4.3% to 0.6% in physical stores through implemented controls \n'
+                              'and cross-referencing temporary transaction movements between 47 warehouses located \n'
+                              'in Colombia, Peru and Ecuador.\n'
+                              'TECHNOLOGIES: \n'
+                              '◾Spreadsheet Applications: Excel\n'
+                              '◾Data visualization: Dashboard in Excel \n', style={'white-space': 'pre'},
                               className='ms-3'), width=7)
          ]),
 

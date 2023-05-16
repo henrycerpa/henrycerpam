@@ -4,9 +4,9 @@ import dash_bootstrap_components as dbc
 
 dash.register_page(__name__, order=2, name="Latest Post")
 
-video_one = 'assets/datascience.png'
+video_one = 'https://raw.githubusercontent.com/henrycerpa/database/main/datascience.png'
 link_one = 'https://youtu.be/Jqu_P_-495I'
-video_two = 'assets/chatgpt.png'
+video_two = 'https://raw.githubusercontent.com/henrycerpa/database/main/chatgpt.png'
 link_two = 'https://youtu.be/Eh04BJfshWY'
 
 def layout():

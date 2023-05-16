@@ -121,7 +121,7 @@ def layout():
 
                                 html.Div([
                                     html.Img(
-                                        src='https://raw.githubusercontent.com/henrycerpa/thedatabitocom/main/assets/vaca.png',
+                                        src='https://raw.githubusercontent.com/henrycerpa/database/main/vaca.png',
                                         style={'width': '60%', 'display': 'block', 'margin': 'auto', 'opacity': '80%'}),
                                 ], style={'text-align': 'center'}),
 

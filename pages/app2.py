@@ -1,9 +1,13 @@
+import dash
+from dash import html, dcc, callback
+import dash_bootstrap_components as dbc
 import pandas as pd
 import plotly.express as px
 from .side_bar import sidebar
 from sklearn.linear_model import LogisticRegression
+import plotly.graph_objects as go
 
-dash.register_page(__name__, name="Cannabis in California", title='Cannabis Sales')
+dash.register_page(__name__, name="Cannabis Legal Market", title='Cannabis Legal Market')
 
 df = pd.read_csv('https://raw.githubusercontent.com/henrycerpa/database/main/CannabisSalesByCounty.csv')
 data = pd.read_csv('https://raw.githubusercontent.com/henrycerpa/database/main/midwestern_hemp.csv')
@@ -42,14 +46,16 @@ def layout():
                         ], style={'width': '180%'}),
                     ], className='footer', style={'display': 'flex'}),
 
-                    html.H2("Per Capita Cannabis Sales by County in California", style={'text-align': 'center'}),
-                    html.H3("Select a County"),
-                    dcc.Dropdown(
-                        id='county-dropdown',
-                        options=[{'label': county, 'value': county} for county in df['County'].unique()],
-                        value=df['County'].unique()[0]
-                    ),
-                    dcc.Graph(id='sales-graph'),
+                    html.Div([
+                        html.H3("Select a County"),
+
+                        dcc.Dropdown(
+                            id='county-dropdown',
+                            options=[{'label': county, 'value': county} for county in df['County'].unique()],
+                            value=df['County'].unique()[0]
+                        ),
+                        dcc.Graph(id='sales-graph')
+                    ],className='box', style={'padding-bottom': '15px'}),
 
                     html.Div([
                         html.Div([
@@ -59,17 +65,18 @@ def layout():
                         ], style={'width': '180%'}),
                     ], className='footer', style={'display': 'flex'}),
 
-                    html.H2("Hemp Failure Rate Prediction", style={'text-align': 'center'}),
+
                     html.Div([
-                        html.Label("State"),
-                        dcc.Input(id='state-input', type='text'),
-                        html.Label("County"),
-                        dcc.Input(id='county-input', type='text'),
-                        html.Label("Sample Date"),
-                        dcc.DatePickerSingle(id='date-input', date=None),
-                        html.Button('Predict Failure Rate', id='predict-button', n_clicks=0),
-                        html.Div(id='prediction-output')
-                    ])
+                        html.Div([
+                            html.Label("Select a State"),
+                            dcc.Dropdown(
+                                id='state-dropdown',
+                                options=[{'label': state, 'value': state} for state in data['state'].unique()],
+                                value='Wisconsin'
+                            ),
+                        ]),
+                        dcc.Graph(id='prediction-graph')
+                    ],className='box', style={'padding-bottom': '15px'})
 
                 ], xs=8, sm=8, md=10, lg=10, xl=10, xxl=10)
         ]
@@ -88,24 +95,33 @@ def update_graph(selected_county):
     filtered_data = filtered_data.sort_values('YearQuarter')  # Ordenar los valores en el eje X
     fig = px.line(filtered_data, x='YearQuarter', y='Per Capita Sales', color='County')
     fig.update_layout(
+        title='Per Capita Cannabis Sales by County in California',
         yaxis={'title': 'Per Capita Sales'},
         xaxis={'type': 'category'}  # Especificar que los valores en el eje X sean tratados como categorías
     )
     return fig
 
 @callback(
-    dash.dependencies.Output('prediction-output', 'children'),
-    [dash.dependencies.Input('predict-button', 'n_clicks')],
-    [dash.dependencies.State('state-input', 'value'), dash.dependencies.State('county-input', 'value'), dash.dependencies.State('date-input', 'date')]
+    dash.dependencies.Output('prediction-graph', 'figure'),
+    [dash.dependencies.Input('state-dropdown', 'value')]
 )
-def predict_failure_rate(n_clicks, state, county, date):
-    if n_clicks > 0:
-        input_data = pd.DataFrame({'state': [state], 'county': [county], 'sample_date': [date]})
-        input_data = pd.get_dummies(input_data)  # Create dummy variables
-        input_data = input_data.reindex(columns=X.columns, fill_value=0)  # Align columns with training data
-        prediction = logreg.predict_proba(input_data)[:, 1]  # Probability of failure (class 1)
-        return html.Div([
-            html.H3("Predicted Failure Rate:"),
-            html.P(f"{prediction[0]:.2%}")
-        ])
-    return ''
+def update_prediction_graph(state):
+    if state:
+        county_predictions = []
+        for county in data[data['state'] == state]['county'].unique():
+            input_data = pd.DataFrame({'state': [state], 'county': [county]})
+            input_data = pd.get_dummies(input_data)  # Create dummy variables
+            input_data = input_data.reindex(columns=X.columns, fill_value=0)  # Align columns with training data
+            prediction = logreg.predict_proba(input_data)[:, 1]  # Probability of failure (class 1)
+            county_predictions.append({'county': county, 'prediction': prediction[0]})
+
+        county_predictions_df = pd.DataFrame(county_predictions)
+
+        fig = go.Figure(data=go.Bar(x=county_predictions_df['county'], y=county_predictions_df['prediction']))
+        fig.update_layout(
+            title=f"Hemp Failure Rate Predictions by County - State: {state}",
+            xaxis_title=f"{state}",
+            yaxis_title="Failure Rate",
+        )
+
+        return fig
